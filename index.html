@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Media Privacy Checker — Facebook, Instagram, TikTok, WhatsApp & X Settings Audit | Dinal Studios</title>
+<meta name="description" content="Social media privacy checker for Facebook, Instagram, TikTok, WhatsApp and X: step-by-step settings walkthroughs, per-platform scores, and saved audits.">
+<meta name="keywords" content="social-media-privacy, facebook-privacy-settings, instagram-privacy, tiktok-privacy, whatsapp-privacy, online-privacy, privacy-checker, cyber-security, educational-tool, javascript">
+<meta name="author" content="Dinal Studios">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://anaskhan0009.github.io/social-media-privacy-checker/">
+<meta property="og:title" content="Social Media Privacy Checker — Facebook, Instagram, TikTok, WhatsApp & X Settings Audit | Dinal Studios">
+<meta property="og:description" content="Social media privacy checker for Facebook, Instagram, TikTok, WhatsApp and X: step-by-step settings walkthroughs, per-platform scores, and saved audits.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://anaskhan0009.github.io/social-media-privacy-checker/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Social Media Privacy Checker — Facebook, Instagram, TikTok, WhatsApp & X Settings Audit | Dinal Studios">
+<meta name="twitter:description" content="Social media privacy checker for Facebook, Instagram, TikTok, WhatsApp and X: step-by-step settings walkthroughs, per-platform scores, and saved audits.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Social Media Privacy Checker — Facebook, Instagram, TikTok, WhatsApp & X Audits",
+  "url": "https://anaskhan0009.github.io/social-media-privacy-checker/",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (Web browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Dinal Studios"
+  },
+  "description": "Social media privacy checker for Facebook, Instagram, TikTok, WhatsApp and X: step-by-step settings walkthroughs, per-platform scores, and saved audits."
+}
+</script>
+<style>
+  * { box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+  body { margin: 0; background: #0a0f1a; color: #dbe4f3; }
+  header { background: radial-gradient(1000px 400px at 50% -80px, #14532d 0%, #0a0f1a 60%); padding: 46px 16px 30px; text-align: center; border-bottom: 1px solid #1d2b45; }
+  header h1 { margin: 0 0 8px; font-size: 32px; letter-spacing: .5px; }
+  header h1 span { color: #22c55e; }
+  header p { margin: 0; color: #93a5c4; font-size: 15px; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 22px 14px 46px; }
+  .card { background: #111a2c; border: 1px solid #1f2c47; border-radius: 14px; padding: 22px; margin-bottom: 20px; }
+  .card h2 { margin: 0 0 6px; font-size: 20px; color: #fff; }
+  .card .sub { color: #93a5c4; font-size: 13.5px; margin: 0 0 16px; line-height: 1.55; }
+  .btn { background: #22c55e; color: #06280f; border: none; padding: 11px 20px; border-radius: 9px; cursor: pointer; font-weight: 700; font-size: 14px; }
+  .btn.dark { background: #1f2c47; color: #dbe4f3; }
+  .btn.ghost { background: transparent; border: 1px solid #2a3a5c; color: #dbe4f3; }
+  .btn.danger { background: #7f1d1d; color: #fecaca; }
+  .btn.sm { padding: 7px 13px; font-size: 13px; }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .hidden { display: none !important; }
+  input[type=text], input[type=email], input[type=password], input[type=number], textarea, select { width: 100%; background: #0a0f1a; border: 1px solid #22304f; border-radius: 9px; color: #dbe4f3; padding: 11px 12px; font-size: 14px; margin: 0 0 10px; font-family: inherit; }
+  textarea { min-height: 100px; resize: vertical; line-height: 1.55; }
+  label.fl { display: block; font-size: 13px; color: #93a5c4; margin: 0 0 5px; font-weight: 600; }
+  .tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+  .tab { flex: 1; text-align: center; padding: 9px; border-radius: 9px; background: #0a0f1a; border: 1px solid #22304f; cursor: pointer; font-weight: 700; font-size: 14px; color: #93a5c4; }
+  .tab.on { background: #14532d; color: #bbf7d0; border-color: #22c55e; }
+  .note { font-size: 12.5px; color: #fde68a; background: #1c1917; border: 1px solid #a16207; border-radius: 9px; padding: 10px 12px; line-height: 1.55; margin-top: 14px; }
+  .msg { font-size: 13.5px; margin: 10px 0 0; min-height: 18px; }
+  .msg.err { color: #fca5a5; }
+  .msg.ok { color: #86efac; }
+  .bar { height: 14px; background: #22304f; border-radius: 8px; overflow: hidden; margin: 12px 0 8px; }
+  .bar i { display: block; height: 100%; width: 0%; transition: width .45s, background .45s; }
+  .scorebig { font-size: 44px; font-weight: 800; color: #fff; line-height: 1; }
+  .grade { font-size: 15px; font-weight: 700; }
+  .item { display: flex; gap: 12px; background: #0a0f1a; border: 1px solid #1f2c47; border-radius: 10px; padding: 13px 14px; margin-bottom: 9px; cursor: pointer; align-items: flex-start; }
+  .item:hover { border-color: #2a3a5c; }
+  .item input { width: 20px; height: 20px; accent-color: #22c55e; margin-top: 2px; cursor: pointer; flex-shrink: 0; }
+  .item .t { font-size: 14.5px; color: #fff; font-weight: 600; }
+  .item .d { font-size: 12.5px; color: #93a5c4; margin-top: 2px; line-height: 1.5; }
+  .item .pts { margin-left: auto; flex-shrink: 0; background: #1f2c47; color: #86efac; border-radius: 6px; padding: 2px 8px; font-size: 11.5px; font-weight: 700; }
+  .item.crit .pts { background: #7f1d1d; color: #fecaca; }
+  .item.done { border-color: #14532d; opacity: .78; }
+  .item.done .t { text-decoration: line-through; }
+  .group { margin-bottom: 20px; }
+  .group h3 { color: #22c55e; font-size: 15.5px; margin: 0 0 10px; text-transform: uppercase; letter-spacing: .6px; }
+  table.cmp { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 6px; }
+  table.cmp th, table.cmp td { border: 1px solid #22304f; padding: 9px 10px; text-align: left; vertical-align: top; line-height: 1.5; }
+  table.cmp th { background: #0a0f1a; color: #fff; }
+  table.cmp td:first-child { color: #93a5c4; font-weight: 600; white-space: nowrap; }
+  .pill { display: inline-block; padding: 2px 9px; border-radius: 99px; font-size: 11.5px; font-weight: 700; }
+  .pill.g { background: #14532d; color: #bbf7d0; }
+  .pill.y { background: #713f12; color: #fde68a; }
+  .pill.r { background: #7f1d1d; color: #fecaca; }
+  .saved { background: #0a0f1a; border: 1px solid #1f2c47; border-radius: 10px; padding: 14px 16px; margin-bottom: 10px; }
+  .saved h4 { margin: 0 0 4px; color: #fff; font-size: 15px; }
+  .saved .meta { font-size: 12px; color: #5b6c8f; margin-bottom: 6px; }
+  .saved .body { font-size: 13.5px; color: #aebbd6; line-height: 1.55; white-space: pre-wrap; word-break: break-word; }
+  .saved .acts { margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .flag { border: 1px solid #7f1d1d; border-left: 4px solid #ef4444; background: #0a0f1a; border-radius: 9px; padding: 11px 13px; margin-bottom: 8px; font-size: 13.5px; line-height: 1.55; }
+  .flag b { color: #fca5a5; }
+  .flag.warn { border-color: #a16207; border-left-color: #eab308; }
+  .flag.warn b { color: #fef08a; }
+  .flag.good { border-color: #14532d; border-left-color: #22c55e; }
+  .flag.good b { color: #86efac; }
+  .q { margin-bottom: 16px; }
+  .q p { margin: 0 0 8px; font-weight: 600; color: #fff; font-size: 14.5px; }
+  .opt { display: block; background: #0a0f1a; border: 1px solid #1f2c47; border-radius: 9px; padding: 10px 13px; margin-bottom: 7px; cursor: pointer; font-size: 13.5px; }
+  .opt:hover { border-color: #2a3a5c; }
+  .opt input { accent-color: #22c55e; margin-right: 8px; }
+  .opt.sel { border-color: #22c55e; background: #0f2417; }
+  ul.learn { margin: 10px 0 0; padding-left: 18px; color: #aebbd6; font-size: 13.5px; line-height: 1.65; }
+  ul.learn li { margin-bottom: 6px; }
+  .allgood { background: #0f2417; border: 1px solid #14532d; border-radius: 10px; padding: 14px 16px; color: #bbf7d0; font-size: 14px; line-height: 1.55; }
+  .empty { color: #5b6c8f; font-size: 13.5px; border: 1px dashed #22304f; border-radius: 10px; padding: 16px; text-align: center; }
+  footer { text-align: center; color: #5b6c8f; font-size: 12.5px; padding: 0 14px 34px; }
+  footer a { color: #22c55e; text-decoration: none; }
+
+</style>
+</head>
+<body>
+<header>
+  <h1>🔏 Social Media Privacy <span>Checker</span></h1>
+  <p>Per-platform privacy walkthroughs with scores — Facebook, Instagram, TikTok, WhatsApp and X</p>
+</header>
+<div class="wrap">
+  <div class="card" id="dsAuthCard">
+    <h2>👤 Your Account <span style="font-size:12.5px;color:#93a5c4;font-weight:400">(optional — unlocks saving &amp; history)</span></h2>
+    <p class="sub">The tool below works fully as a guest, no account needed. Create a free local account to save, edit and export your own records.</p>
+    <div id="dsAuthOut">
+      <div class="tabs"><div class="tab on" id="dsTabLogin">Log in</div><div class="tab" id="dsTabSignup">Sign up</div></div>
+      <form id="dsLoginForm">
+        <label class="fl" for="dsLoginEmail">Email</label>
+        <input type="email" id="dsLoginEmail" required autocomplete="email" placeholder="you@example.com">
+        <label class="fl" for="dsLoginPass">Password</label>
+        <input type="password" id="dsLoginPass" required autocomplete="current-password" placeholder="Your password">
+        <div class="row">
+          <button class="btn" type="submit">Log in</button>
+          <button class="btn ghost" type="button" id="dsGuestBtn">Continue as guest</button>
+        </div>
+      </form>
+      <form id="dsSignupForm" class="hidden">
+        <label class="fl" for="dsSuName">Your name</label>
+        <input type="text" id="dsSuName" required autocomplete="name" placeholder="e.g. Ali Raza">
+        <label class="fl" for="dsSuEmail">Email</label>
+        <input type="email" id="dsSuEmail" required autocomplete="email" placeholder="you@example.com">
+        <label class="fl" for="dsSuPass">Password (minimum 6 characters)</label>
+        <input type="password" id="dsSuPass" required autocomplete="new-password" placeholder="Choose a unique password">
+        <div class="row"><button class="btn" type="submit">Create free account</button></div>
+      </form>
+    </div>
+    <div id="dsAuthIn" class="hidden">
+      <p style="margin:0 0 12px">Signed in as <b id="dsUserName" style="color:#fff"></b> <span id="dsUserEmail" style="color:#93a5c4"></span></p>
+      <div class="row">
+        <button class="btn sm" id="dsExportBtn" type="button">⬇ Export my records (JSON)</button>
+        <label class="btn sm dark" style="cursor:pointer;margin:0">⬆ Import records<input type="file" id="dsImportFile" accept=".json,application/json" class="hidden"></label>
+        <button class="btn sm ghost" id="dsLogoutBtn" type="button">Log out</button>
+        <button class="btn sm danger" id="dsDeleteBtn" type="button">Delete account</button>
+      </div>
+    </div>
+    <div class="msg" id="dsAuthMsg"></div>
+    <div class="note">🔒 <b>Local account</b> — your data stays on this device only. This is not a cloud account; use a unique password you don't use elsewhere.</div>
+  </div>
+
+  <div class="card">
+    <h2>🎯 How This Works</h2>
+    <p class="sub">Every platform below hides the same few protections behind different menus. For each platform: follow the steps, tick what's actually set, and watch its privacy score. Your ticks save on this device automatically — <b>log in above to save dated audits per platform</b> and prove progress over time. Menu names vary slightly by app version and region; the settings themselves are stable.</p>
+    <div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
+      <div class="scorebig"><span id="overallScore">0</span><span style="font-size:20px;color:#93a5c4">/100</span></div>
+      <div style="flex:1;min-width:220px">
+        <div class="grade" id="overallGrade">Your combined privacy posture across all five platforms.</div>
+        <div class="bar"><i id="overallFill"></i></div>
+        <div style="font-size:12.5px;color:#93a5c4">Combined score = average of the five platform scores.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="platforms"></div>
+
+  <div class="card">
+    <h2>💾 My Saved Platform Audits</h2>
+    <p class="sub">Audits snapshot a platform's ticked settings, score and your note. Load one back to review or update it; export/import everything as JSON from your account card.</p>
+    <div id="dsRecordList"></div>
+  </div>
+
+  <div class="card">
+    <h2>🎓 The Three Habits Behind Every Setting</h2>
+    <ul class="learn">
+      <li><b>Audience first.</b> Almost every leak is a default set to "Public" or "Everyone". If a post doesn't need the world, it shouldn't have the world.</li>
+      <li><b>Discoverability is a door.</b> Being findable by phone number or email connects your accounts to each other — and to anyone holding a leaked contact list.</li>
+      <li><b>Review after updates.</b> Apps reshuffle privacy menus and occasionally reset choices. A five-minute quarterly re-check keeps today's work from quietly expiring.</li>
+    </ul>
+  </div>
+
+</div>
+
+<section id="ds-more-tools" style="max-width:900px;margin:32px auto 0;padding:18px 20px;border-top:1px solid #1e293b;text-align:center;font-family:inherit;">
+  <h2 style="font-size:1rem;margin:0 0 10px;color:#94a3b8;">More free tools by Dinal Studios</h2>
+  <ul style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;">
+      <li><a href="https://anaskhan0009.github.io/personal-security-audit-checklist/">Personal Security Audit Checklist</a></li>
+      <li><a href="https://anaskhan0009.github.io/browser-fingerprint-test/">Browser Fingerprint Test — What Websites Learn About You</a></li>
+      <li><a href="https://anaskhan0009.github.io/identity-theft-protection-guide/">Identity Theft Protection Guide & Task Tracker</a></li>
+      <li><a href="https://anaskhan0009.github.io/kids-online-safety-guide/">Kids Online Safety Guide for Parents</a></li>
+      <li><a href="https://anaskhan0009.github.io/phishing-awareness-trainer/">Phishing Awareness Training Game</a></li>
+      <li><a href="https://anaskhan0009.github.io/data-breach-response-guide/">Data Breach Response Guide — What To Do First</a></li>
+  </ul>
+</section>
+<footer>Built by <a href="https://github.com/anaskhan0009">Dinal Studios</a> · Social Media Privacy Checker — the settings exist; this makes sure they're set</footer>
+
+<script>
+"use strict";
+var APP_ID = 'social-privacy-checker';
+// ==DS-CORE-START==
+/* Dinal Studios shared local account + record store.
+   Accounts exist ONLY in this browser's localStorage. Passwords are stored
+   solely as salted SHA-256 hashes (WebCrypto) — never in plaintext. */
+var DS_LS = {
+  get: function (k, d) { try { var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
+  set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} },
+  del: function (k) { try { localStorage.removeItem(k); } catch (e) {} }
+};
+function ds_uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 10); }
+function ds_sha256(str) {
+  return crypto.subtle.digest('SHA-256', new TextEncoder().encode(str)).then(function (buf) {
+    return Array.prototype.map.call(new Uint8Array(buf), function (b) { return ('0' + b.toString(16)).slice(-2); }).join('');
+  });
+}
+function ds_esc(s) {
+  return String(s === null || s === undefined ? '' : s).replace(/[&<>"']/g, function (c) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+  });
+}
+function ds_fmtDate(ts) {
+  var d = new Date(ts);
+  return d.toLocaleDateString() + ' ' + d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+}
+var DS_Auth = {
+  usersKey: 'ds_users_v1',
+  sessionKey: 'ds_session_v1',
+  users: function () { return DS_LS.get(this.usersKey, []); },
+  _saveUsers: function (u) { DS_LS.set(this.usersKey, u); },
+  _pub: function (u) { return { id: u.id, name: u.name, email: u.email }; },
+  signup: function (name, email, password) {
+    var self = this;
+    name = (name || '').trim();
+    email = (email || '').trim().toLowerCase();
+    if (!name) return Promise.reject(new Error('Please enter your name.'));
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return Promise.reject(new Error('Please enter a valid email address.'));
+    if (!password || password.length < 6) return Promise.reject(new Error('Password must be at least 6 characters.'));
+    var users = this.users(), i;
+    for (i = 0; i < users.length; i++) {
+      if (users[i].email === email) return Promise.reject(new Error('An account with this email already exists on this device. Please log in instead.'));
+    }
+    var salt = ds_uid() + ds_uid();
+    return ds_sha256(salt + '::' + password).then(function (hash) {
+      var user = { id: ds_uid(), name: name, email: email, salt: salt, hash: hash, createdAt: Date.now() };
+      users.push(user);
+      self._saveUsers(users);
+      DS_LS.set(self.sessionKey, user.id);
+      return self._pub(user);
+    });
+  },
+  login: function (email, password) {
+    var self = this;
+    email = (email || '').trim().toLowerCase();
+    var users = this.users(), user = null, i;
+    for (i = 0; i < users.length; i++) { if (users[i].email === email) user = users[i]; }
+    if (!user) return Promise.reject(new Error('No account with this email exists on this device. Please sign up first.'));
+    return ds_sha256(user.salt + '::' + password).then(function (hash) {
+      if (hash !== user.hash) throw new Error('Incorrect password. Please try again.');
+      DS_LS.set(self.sessionKey, user.id);
+      return self._pub(user);
+    });
+  },
+  logout: function () { DS_LS.del(this.sessionKey); },
+  current: function () {
+    var id = DS_LS.get(this.sessionKey, null), users = this.users(), i;
+    if (!id) return null;
+    for (i = 0; i < users.length; i++) { if (users[i].id === id) return this._pub(users[i]); }
+    return null;
+  },
+  deleteAccount: function () {
+    var id = DS_LS.get(this.sessionKey, null);
+    if (!id) return false;
+    this._saveUsers(this.users().filter(function (u) { return u.id !== id; }));
+    DS_LS.del('ds_data_' + APP_ID + '_' + id);
+    this.logout();
+    return true;
+  }
+};
+var DS_Store = {
+  _key: function () {
+    var u = DS_Auth.current();
+    return u ? ('ds_data_' + APP_ID + '_' + u.id) : null;
+  },
+  all: function () { var k = this._key(); return k ? DS_LS.get(k, []) : []; },
+  _save: function (records) { var k = this._key(); if (k) DS_LS.set(k, records); },
+  create: function (record) {
+    if (!this._key()) throw new Error('Please log in to save records.');
+    var records = this.all();
+    record.id = ds_uid();
+    record.createdAt = Date.now();
+    record.updatedAt = Date.now();
+    records.unshift(record);
+    this._save(records);
+    return record;
+  },
+  get: function (id) {
+    var r = this.all(), i;
+    for (i = 0; i < r.length; i++) { if (r[i].id === id) return r[i]; }
+    return null;
+  },
+  update: function (id, patch) {
+    var records = this.all(), i, k;
+    for (i = 0; i < records.length; i++) { if (records[i].id === id) break; }
+    if (i === records.length) return null;
+    for (k in patch) { records[i][k] = patch[k]; }
+    records[i].updatedAt = Date.now();
+    this._save(records);
+    return records[i];
+  },
+  remove: function (id) {
+    this._save(this.all().filter(function (r) { return r.id !== id; }));
+  },
+  exportJSON: function () { return JSON.stringify(this.all(), null, 2); },
+  importJSON: function (text) {
+    var arr = JSON.parse(text);
+    if (!Array.isArray(arr)) throw new Error('That file does not contain a valid records list.');
+    this._save(arr);
+    return arr.length;
+  }
+};
+function dsInitAuth(onChange) {
+  var out = document.getElementById('dsAuthOut'), inn = document.getElementById('dsAuthIn');
+  if (!out || !inn) return;
+  var msg = document.getElementById('dsAuthMsg');
+  function say(text, ok) { if (msg) { msg.textContent = text || ''; msg.className = 'msg ' + (ok ? 'ok' : 'err'); } }
+  function render() {
+    var u = DS_Auth.current();
+    if (u) {
+      out.classList.add('hidden'); inn.classList.remove('hidden');
+      document.getElementById('dsUserName').textContent = u.name;
+      document.getElementById('dsUserEmail').textContent = '(' + u.email + ')';
+    } else {
+      out.classList.remove('hidden'); inn.classList.add('hidden');
+    }
+    if (onChange) onChange(u);
+  }
+  var tabL = document.getElementById('dsTabLogin'), tabS = document.getElementById('dsTabSignup');
+  var fL = document.getElementById('dsLoginForm'), fS = document.getElementById('dsSignupForm');
+  function showTab(signup) {
+    tabL.classList.toggle('on', !signup); tabS.classList.toggle('on', signup);
+    fL.classList.toggle('hidden', signup); fS.classList.toggle('hidden', !signup);
+    say('');
+  }
+  tabL.addEventListener('click', function () { showTab(false); });
+  tabS.addEventListener('click', function () { showTab(true); });
+  fL.addEventListener('submit', function (e) {
+    e.preventDefault();
+    DS_Auth.login(document.getElementById('dsLoginEmail').value, document.getElementById('dsLoginPass').value)
+      .then(function () { say('Welcome back! You are logged in.', true); render(); })
+      .catch(function (err) { say(err.message, false); });
+  });
+  fS.addEventListener('submit', function (e) {
+    e.preventDefault();
+    DS_Auth.signup(document.getElementById('dsSuName').value, document.getElementById('dsSuEmail').value, document.getElementById('dsSuPass').value)
+      .then(function () { say('Account created on this device — you are logged in.', true); render(); })
+      .catch(function (err) { say(err.message, false); });
+  });
+  var guest = document.getElementById('dsGuestBtn');
+  if (guest) guest.addEventListener('click', function () { say('Continuing as guest — the tool works fully. Log in any time to save records.', true); });
+  document.getElementById('dsLogoutBtn').addEventListener('click', function () {
+    DS_Auth.logout();
+    say('Logged out. Your saved records stay on this device for your next login.', true);
+    render();
+  });
+  document.getElementById('dsDeleteBtn').addEventListener('click', function () {
+    if (window.confirm('Delete your local account and ALL its saved records from this device? This cannot be undone.')) {
+      DS_Auth.deleteAccount();
+      say('Account and its records were deleted from this device.', true);
+      render();
+    }
+  });
+  document.getElementById('dsExportBtn').addEventListener('click', function () {
+    var blob = new Blob([DS_Store.exportJSON()], { type: 'application/json' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = APP_ID + '-records.json';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function () { URL.revokeObjectURL(a.href); }, 600);
+  });
+  document.getElementById('dsImportFile').addEventListener('change', function (e) {
+    var f = e.target.files[0];
+    if (!f) return;
+    var reader = new FileReader();
+    reader.onload = function () {
+      try { var n = DS_Store.importJSON(String(reader.result)); say('Imported ' + n + ' record(s).', true); render(); }
+      catch (err) { say('Import failed: ' + err.message, false); }
+    };
+    reader.readAsText(f);
+    e.target.value = '';
+  });
+  render();
+}
+// ==DS-CORE-END==
+
+/* ---- Social Media Privacy Checker: per-platform walkthroughs, scores, saved audits ---- */
+var PLATFORMS = [
+  { id: 'facebook', name: 'Facebook', icon: '📘', items: [
+    { id: 'fb-posts', pts: 20, crit: true, t: 'Default post audience is "Friends" (not Public)', d: 'Settings → Privacy → "Who can see your future posts?" → Friends. Public posts are scraped for scams, profiling and AI training sets.' },
+    { id: 'fb-friends', pts: 14, crit: false, t: 'Friends list visibility is "Only me"', d: 'Settings → Privacy → "Who can see your friends list?" A public friends list is a ready-made target list for clone-account scams against people you know.' },
+    { id: 'fb-tag', pts: 16, crit: false, t: 'Tag review is ON (posts & photos)', d: 'Settings → Profile and tagging → review posts/photos you\'re tagged in before they appear. Stops embarrassing and malicious tags going live instantly.' },
+    { id: 'fb-limit', pts: 12, crit: false, t: 'You ran "Limit past posts" (or audit old public posts yearly)', d: 'Settings → Privacy → Limit the audience for old posts. Years of public posts are a biography written for strangers.' },
+    { id: 'fb-off', pts: 14, crit: false, t: 'Off-Facebook activity reviewed / cleared, ad preferences tightened', d: 'Settings → Off-Facebook activity. Sites and apps report your activity to Facebook; review the list and disconnect what surprises you.' },
+    { id: 'fb-2fa', pts: 24, crit: true, t: 'Two-factor authentication is ON', d: 'Settings → Password and security → two-factor authentication, preferably an authenticator app. A hijacked Facebook often becomes the key to every "Log in with Facebook" account.' }
+  ]},
+  { id: 'instagram', name: 'Instagram', icon: '📸', items: [
+    { id: 'ig-private', pts: 22, crit: true, t: 'Account is set to Private', d: 'Settings → Account privacy → Private account. Followers must be approved by you — the single biggest Instagram privacy switch.' },
+    { id: 'ig-story', pts: 14, crit: false, t: 'Story audience is controlled (Close Friends for personal content; Hide Story From set)', d: 'Settings → Privacy → Story. Screenshots make "temporary" permanent — assume anything posted can be kept.' },
+    { id: 'ig-comments', pts: 14, crit: false, t: 'Comment controls & hidden words are ON', d: 'Settings → Privacy → Comments / Hidden words. Filters harassment and the crypto-scam spam that floods public posts.' },
+    { id: 'ig-activity', pts: 12, crit: false, t: 'Activity status is OFF', d: 'Settings → Messages and story replies → Show activity status. Nobody needs a live feed of when you\'re online and ignoring them.' },
+    { id: 'ig-tags', pts: 14, crit: false, t: 'Tags & mentions require your approval / are limited', d: 'Settings → Privacy → Tags and Mentions: approve tags manually; limit mentions to people you follow.' },
+    { id: 'ig-2fa', pts: 24, crit: true, t: 'Two-factor authentication is ON', d: 'Settings → Accounts Centre → Password and security. Instagram accounts are prime hijack targets for crypto scams aimed at your followers.' }
+  ]},
+  { id: 'tiktok', name: 'TikTok', icon: '🎵', items: [
+    { id: 'tt-private', pts: 20, crit: true, t: 'Account is Private (essential for anyone under 18)', d: 'Settings → Privacy → Private account. Only approved followers see videos, bio links and liked content.' },
+    { id: 'tt-interact', pts: 18, crit: false, t: 'Downloads, Duet and Stitch are limited to Friends or Off', d: 'Settings → Privacy → Downloads / Duet / Stitch. Downloads let strangers re-upload your videos anywhere, with any caption.' },
+    { id: 'tt-comments', pts: 14, crit: false, t: 'Comment filters and keyword blocks are ON', d: 'Settings → Privacy → Comments → filter spam/offensive + custom keywords. Cuts grooming approaches and scam bait in comments.' },
+    { id: 'tt-ads', pts: 14, crit: false, t: 'Personalized ads are OFF / ad data minimized', d: 'Settings → Ads → personalized ads. Less profiling data sold into the ad ecosystem.' },
+    { id: 'tt-suggest', pts: 12, crit: false, t: '"Suggest your account to others" is restricted', d: 'Settings → Privacy → suggest your account: turn off contacts/Facebook-friends suggestions if you keep this account separate from real life.' },
+    { id: 'tt-2fa', pts: 22, crit: true, t: '2-step verification is ON', d: 'Settings → Security → 2-step verification with at least two methods. Creator accounts are income — protect them like it.' }
+  ]},
+  { id: 'whatsapp', name: 'WhatsApp', icon: '💬', items: [
+    { id: 'wa-photo', pts: 16, crit: false, t: 'Profile photo visible to "My contacts" only', d: 'Settings → Privacy → Profile photo. An "Everyone" photo is the raw material for impersonation accounts that scam your family.' },
+    { id: 'wa-lastseen', pts: 14, crit: false, t: 'Last seen & online set to "My contacts" or "Nobody"', d: 'Settings → Privacy → Last seen and online. Public activity patterns tell burglars and scammers when you\'re awake, busy, or away.' },
+    { id: 'wa-groups', pts: 16, crit: false, t: 'Group adds are restricted ("My contacts" / "My contacts except…")', d: 'Settings → Privacy → Groups. Stops strangers dropping you into scam/investment groups where social pressure does the rest.' },
+    { id: 'wa-disappear', pts: 12, crit: false, t: 'Default disappearing-message timer considered for sensitive chats', d: 'Settings → Privacy → Default message timer. Not secrecy from the other person — but less history sitting in a stolen phone.' },
+    { id: 'wa-lock', pts: 16, crit: false, t: 'App/fingerprint lock is ON', d: 'Settings → Privacy → Fingerprint (or Face ID) lock. Your chats shouldn\'t open for whoever picks up your unlocked-for-a-second phone.' },
+    { id: 'wa-2fa', pts: 26, crit: true, t: 'Two-step verification PIN is SET', d: 'Settings → Account → Two-step verification. This PIN is what stops a SIM-swap or stolen-code attack from re-registering your number on an attacker\'s phone.' }
+  ]},
+  { id: 'x', name: 'X (Twitter)', icon: '✖️', items: [
+    { id: 'x-protect', pts: 20, crit: true, t: 'Posts are Protected (private) — or a deliberate, reviewed choice to be public', d: 'Settings → Privacy and safety → Audience → Protect your posts. Public is fine for a public persona — as long as it\'s chosen, not defaulted.' },
+    { id: 'x-tag', pts: 14, crit: false, t: 'Photo tagging is OFF or limited', d: 'Settings → Privacy and safety → Audience → Photo tagging. Prevents strangers attaching your handle to anything.' },
+    { id: 'x-dm', pts: 16, crit: false, t: 'DMs are restricted (only people you follow / verified; quality filter ON)', d: 'Settings → Privacy and safety → Direct Messages. Open DMs are the front door for crypto and "support" scams.' },
+    { id: 'x-discover', pts: 16, crit: false, t: 'Discoverability by email & phone number is OFF', d: 'Settings → Privacy and safety → Discoverability and contacts. Stops leaked contact lists from mapping your accounts together.' },
+    { id: 'x-loc', pts: 12, crit: false, t: 'Precise location in posts is OFF', d: 'Settings → Privacy and safety → Location information. Real-time location is a physical-safety setting, not a privacy nicety.' },
+    { id: 'x-2fa', pts: 22, crit: true, t: 'Two-factor authentication is ON', d: 'Settings → Security and account access → Security → two-factor authentication (app or key; note SMS 2FA tiers vary by plan).' }
+  ]}
+];
+function platformScore(platform, checkedMap) {
+  var earned = 0, total = 0;
+  platform.items.forEach(function (it) { total += it.pts; if (checkedMap && checkedMap[it.id]) earned += it.pts; });
+  return total ? Math.round(earned / total * 100) : 0;
+}
+function dsPlatformById(id) {
+  for (var i = 0; i < PLATFORMS.length; i++) { if (PLATFORMS[i].id === id) return PLATFORMS[i]; }
+  return null;
+}
+
+var dsSocChecks = DS_LS.get(APP_ID + '-checks', {});
+var dsSocEditingId = null;
+
+function dsSocRender() {
+  var wrap = document.getElementById('platforms');
+  wrap.innerHTML = PLATFORMS.map(function (p) {
+    var checks = dsSocChecks[p.id] || {};
+    var score = platformScore(p, checks);
+    var items = p.items.map(function (it) {
+      var on = !!checks[it.id];
+      return '<label class="item' + (it.crit ? ' crit' : '') + (on ? ' done' : '') + '" id="sitem-' + it.id + '">' +
+        '<input type="checkbox" data-p="' + p.id + '" data-id="' + it.id + '"' + (on ? ' checked' : '') + '>' +
+        '<span><span class="t">' + ds_esc(it.t) + '</span><div class="d">' + ds_esc(it.d) + '</div></span>' +
+        '<span class="pts">' + (it.crit ? '★ ' : '') + it.pts + ' pts</span></label>';
+    }).join('');
+    return '<div class="card"><h2>' + p.icon + ' ' + p.name + ' — <span style="color:#22c55e">' + score + '/100</span></h2>' +
+      '<div class="bar"><i style="width:' + score + '%;background:' + (score >= 80 ? '#22c55e' : score >= 50 ? '#eab308' : '#ef4444') + '"></i></div>' + items +
+      '<label class="fl" for="note-' + p.id + '">Note for this platform\'s audit (optional)</label>' +
+      '<input type="text" id="note-' + p.id + '" placeholder="e.g. Re-check after app update in March" maxlength="140">' +
+      '<div class="row"><button class="btn sm" data-save="' + p.id + '" type="button">💾 Save ' + p.name + ' audit</button></div>' +
+      '<div class="msg" id="msg-' + p.id + '"></div></div>';
+  }).join('');
+  // overall
+  var sum = PLATFORMS.reduce(function (s, p) { return s + platformScore(p, dsSocChecks[p.id] || {}); }, 0);
+  var overall = Math.round(sum / PLATFORMS.length);
+  document.getElementById('overallScore').textContent = overall;
+  var fill = document.getElementById('overallFill');
+  fill.style.width = overall + '%';
+  fill.style.background = overall >= 80 ? '#22c55e' : overall >= 55 ? '#84cc16' : overall >= 30 ? '#eab308' : '#ef4444';
+  document.getElementById('overallGrade').textContent =
+    overall >= 85 ? '🏆 Locked down — re-check quarterly, apps love moving these menus.' :
+    overall >= 65 ? '🟢 Strong posture — a few platforms still lag behind.' :
+    overall >= 40 ? '🟡 Mixed — your best platform is guarded; your worst is a biography for strangers.' :
+    '🔴 Mostly defaults — and defaults are written for the platforms, not for you.';
+  DS_LS.set(APP_ID + '-checks', dsSocChecks);
+}
+function dsSocRenderRecords() {
+  var list = document.getElementById('dsRecordList');
+  if (!list) return;
+  if (!DS_Auth.current()) {
+    list.innerHTML = '<div class="empty">You are browsing as a guest — ticks still save on this device. Log in above to save dated platform audits.</div>';
+    return;
+  }
+  var records = DS_Store.all();
+  if (!records.length) {
+    list.innerHTML = '<div class="empty">No saved audits yet. Finish a platform above and hit "Save audit".</div>';
+    return;
+  }
+  list.innerHTML = records.map(function (r) {
+    var sev = r.score >= 80 ? 'g' : r.score >= 50 ? 'y' : 'r';
+    return '<div class="saved"><h4><span class="pill ' + sev + '">' + r.score + '/100</span> ' + ds_esc(r.title) + '</h4>' +
+      '<div class="meta">' + ds_fmtDate(r.createdAt) + (r.updatedAt > r.createdAt ? ' · edited ' + ds_fmtDate(r.updatedAt) : '') + '</div>' +
+      '<div class="body">' + ds_esc(r.body) + '</div>' +
+      '<div class="acts"><button class="btn sm dark" data-act="load" data-id="' + r.id + '">📥 Load settings</button>' +
+      '<button class="btn sm danger" data-act="del" data-id="' + r.id + '">🗑️ Delete</button></div></div>';
+  }).join('');
+}
+
+if (typeof window !== 'undefined' && typeof document !== 'undefined' && document.getElementById) {
+  var platWrap = document.getElementById('platforms');
+  platWrap.addEventListener('change', function (e) {
+    if (e.target && e.target.dataset && e.target.dataset.id) {
+      var pid = e.target.getAttribute('data-p');
+      if (!dsSocChecks[pid]) dsSocChecks[pid] = {};
+      dsSocChecks[pid][e.target.dataset.id] = e.target.checked;
+      dsSocRender();
+    }
+  });
+  platWrap.addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('button[data-save]') : null;
+    if (!btn) return;
+    var pid = btn.getAttribute('data-save');
+    var msg = document.getElementById('msg-' + pid);
+    if (!DS_Auth.current()) { msg.textContent = 'Log in above first — audits are saved per account.'; msg.className = 'msg err'; return; }
+    var p = dsPlatformById(pid);
+    var checks = dsSocChecks[pid] || {};
+    var score = platformScore(p, checks);
+    var checkedIds = p.items.filter(function (it) { return checks[it.id]; }).map(function (it) { return it.id; });
+    var missing = p.items.filter(function (it) { return !checks[it.id]; }).map(function (it) { return it.t; });
+    var note = document.getElementById('note-' + pid).value.trim();
+    var body = p.name + ' privacy score: ' + score + '/100.' + (note ? '\nNote: ' + note : '') + '\nStill missing: ' + (missing.length ? missing.join('; ') : 'nothing — fully locked down.');
+    if (dsSocEditingId) {
+      var old = DS_Store.get(dsSocEditingId);
+      if (old && old.platform === pid) {
+        DS_Store.update(dsSocEditingId, { body: body, score: score, checked: checkedIds });
+        msg.textContent = 'Audit updated.';
+        dsSocEditingId = null;
+        dsSocRenderRecords();
+        return;
+      }
+    }
+    DS_Store.create({ kind: 'audit', platform: pid, title: p.name + ' audit — ' + new Date().toLocaleDateString(), body: body, score: score, checked: checkedIds });
+    msg.textContent = 'Audit saved to your records below.';
+    msg.className = 'msg ok';
+    dsSocRenderRecords();
+  });
+  document.getElementById('dsRecordList').addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('button[data-act]') : null;
+    if (!btn) return;
+    var id = btn.getAttribute('data-id'), act = btn.getAttribute('data-act'), r = DS_Store.get(id);
+    if (!r) return;
+    if (act === 'del') {
+      if (window.confirm('Delete this saved audit?')) { DS_Store.remove(id); if (dsSocEditingId === id) dsSocEditingId = null; dsSocRenderRecords(); }
+    } else if (act === 'load') {
+      var p = dsPlatformById(r.platform);
+      if (!p) return;
+      var map = {};
+      (r.checked || []).forEach(function (cid) { map[cid] = true; });
+      dsSocChecks[r.platform] = map;
+      dsSocEditingId = id;
+      dsSocRender();
+      var el = document.querySelector('input[data-p="' + r.platform + '"]');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  });
+  dsInitAuth(function () { dsSocRender(); dsSocRenderRecords(); });
+  dsSocRender();
+}
+
+</script>
+</body>
+</html>
